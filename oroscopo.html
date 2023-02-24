@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oroscopo di oggi, [data di oggi]</title>
+  </head>
+  <body>
+    <h1>Oroscopo di oggi</h1>
+    <ul>
+    </ul>
+    <script>
+      const oroscopo = [
+        "Il futuro splende radioso sulla tua vita! ",
+        "Potresti morire giovedì prox. Occhio ai tornadi. Numero fortunato il 37",
+        "Potresti morire mercoledì prox. Occhio ai nubifragi. Numero fortunato il 55",
+        "Occhio alla buccia di banana. Per il resto, fortuna moderata. Nulla di cui lamentarsi.",
+        "Ahia! Le disgrazie t'attendono dietro l'angolo",
+        "Amore +2 punti, fortuna -0.5 punti, sii puntuale o potresti morire",
+        "Rigogliosa è la vita avanti a te. Per forza: le stelle ti proteggono.",
+        "L'incrocio di Marte e Saturno annuncia il peggio!",
+        "Stai lungi dalle rotaie e tutto andrà bene (numero fortunato il 79)",
+        "Grande fortune arrivano... ma solo se sarai prima ben generoso regalando ogni tuo avere!",
+        "EEEE... a volte la vita ti prende a bastonate negli occhi... ma proprio in questi casi bisogna rialzarsi con tutte le forze e dire OOOOOOOOOOOOOOOOOO",
+        "Finisci ciò che hai cominciato... soldi +2, amore -1.",
+        "Il futuro ti attende con ansia e... con un randello!",
+        "Occhio a non perdere le cose... a quelli del tuo segno capita sempre!",
+        "Occhio alla pioggia acida... Amore +1.5",
+        "Importante! Oggi cammina solo in orizzontale o verticale. Se cammini in diagonale potrebbe succedere qualcosa di bruttissimo ma anche non succedere",
+        "Le stelle parlano chiaro: la morte è vicina. Però se la prendi di lato potrebbe risparmiarti.",
+        "Occhio alle persone vestite di giallo! Cibo fortunato: il pane.",
+        "+3 in amore per te e famiglia. Attenzione ai pesci d'acqua dolce",
+        "Anche se ultimamente sei un po' giù... beh... no nulla basta",
+        "Numeri fortunati: tutti tranne quelli dispari. Non te ne capita una giusta... vabe d'altronde questo è il tuo segno e te lo tieni.",
+        "Prosegui sulla tua strada imperterrito senza ascoltare le critiche della gentaglia dalla larga bocca. Si sa che la testardaggine del tuo segno spesso si scontra con l'imbecillità di tutto il resto del mondo.",
+        "Attento ai marciapiedi con piastrelle a spina di pesce!",
+        "Tutto sembra andare liscio... non puoi lamentarti... eppure manca qualcosa...",
+	"Circondati delle persone che ami e delle cose che detesti (per bilanciare). Segno non zodiacale identificativo: il più.",
+	"Certo, sono tempi duri, e verrebbe voglia di mandare tutto a catafascio. Tuttavia è importante sempre ricordare i valori importantissimi come la famiglia che ti è sempre vicina anche nei momenti più duri. Famigliare fortunato: tutti tranne i cugini.",
+	"Occhio ai cavedani. Tutto promette bene, tranne le scarpe: occhio alle stringhe!",
+	"AAA... segno punzecchiante il tuo! ebbene anche oggi punzecchierai perchè le persone intorno non capiscono... che tu hai bisogno dei tuoi spazi! Non potranno mai capire... ma tu ricorda che la cosa più importante è... [inserire cosa importnate]",
+	"Non avere paura... Non sentirti sconsolato... tutto questo duro lavoro sta per portare i suoi frutti! continua a sperare!",
+	"Anche se questa routine e questi oroscopi ogni giorno uguali ti fanno uscire di testa e ti fanno venire voglia di scomparire nelle giungle facendo u u uu uu uu saltellando di albero in albero... almeno ricorda che hai sempre una famiglia e delle persone importanti che ti vogliono bene sempre anche se a volte te ne dimentichi e anche loro a volte si dimenticano quindi aiutatevi a vicenda a ricordarvi!",
+	"Giornata dura a lavoro a causa di quel ****** del tuo capo? ********** ***** ** ****** ** ******* * * ***** ** * *******",
+	"Giove splende molto splendente nel tuo cielo oggi... è segno ovviamente di giovialità e... perchè no? di nuove avventure!",
+	"Oggi il cielo ha ben poco in serbo per te... ti conviene puntare sulla terra! Fissa attentamente il suolo mentre cammini o qualcosa di tragico potrebbe accadere da un momento all'altro.",
+	"Il/la tuo/a ragazzo/a ti ha lasciato/a? Ha fatto bene. L'incrocio tra Urano e un sasso spaziale strano indica chiaramente che probabilmente ti restano al più 3 ore di vita.",
+	"Certe volte sembra che la tua vita sia come un deserto... sì, ma occhio ai serpenti!",
+	"Se avete paura di affrontare qualche incombenza, ricordate le parole del saggio: paracadute in spalla, shieldini in tasca, e letse go",
+	"Venere oggi vi porta una ventata di nuove emozioni e anche di nuovi colori, soprattutto il giallo e il marrone. Occhio al viola invece!",
+	"Oggi farete faville a lavoro, soprattutto se avete dai 98 ai 104 anni",
+	"Quando la vita ti da uno schiaffo... tu porgi l'altra guancia! Spessore fortunato: 5.5 mm",
+	"Se la vita ti lancia una sfida... te lancia elementi di arredamento dalla finestra! (in senso metaforico ovviamente, ora sta a te interpretare questo messaggio venuto dagli astri)",
+	"Oggi gli astri ti sorridono! Cogli l'attimo! Investi ogni tuo avere nella compravendita di trote salmonate.",
+	"Lo so, lo so... sono tempi duri... con il carobenzina e le altre cose insomma ecco, ma come diceva il famoso stregone degli oroscopi: quando il giuoco si fa duro... completa tu",
+	"A volte ti senti come se ti trovassi sotterrato sotto dieci metri di sabbia rovente... ma forse quello che non hai ancora capito è che... la vera sabbia era dietro i tuoi occhi!",
+	"MMM... purtroppo oggi gli astri sono proprio indecifrabili per te... tocca scendere in strada e farti leggere le carte per SAPERE.",
+	"A volte te ne dimentichi... ma la chiave è prendere la vita con filosofia e spensieratezza... ma mi raccomando: Attenzione ai calamari!",
+	"Ormai questa routine alienante ti fa sembrare di essere dentro al film 'Ricomincio da Capo (Il Giorno della Marmotta)'. Ebbene, ricorda sempre: la vera marmotta è dentro i nostri cuori."
+      ];
+      
+      const segniZodiacali = [
+        "Ariete",
+        "Toro",
+        "Gemelli",
+        "Cancro",
+        "Leone",
+        "Vergine",
+        "Bilancia",
+        "Scorpione",
+        "Sagittario",
+        "Capricorno",
+        "Acquario",
+        "Pesci"
+      ];
+      
+      let estratti = [];
+      
+      function estraiStringaCasuale() {
+        let indice = Math.floor(Math.random() * oroscopo.length);
+        while (estratti.includes(indice)) {
+          indice = Math.floor(Math.random() * oroscopo.length);
+        }
+        estratti.push(indice);
+        return oroscopo[indice];
+      }
+      
+      function stampaOroscopo() {
+        for (let i = 0; i < segniZodiacali.length; i++) {
+          const segno = segniZodiacali[i];
+          const stringa = estraiStringaCasuale();
+          const riga = document.createElement("li");
+          riga.innerText = segno + ": " + stringa;
+          document.querySelector("ul").appendChild(riga);
+        }
+      }
+      
+      stampaOroscopo();
+    </script>
+	E... se non ti è piaciuto il tuo oroscopo... ricarica la pagina!
+  </body>
+</html>
