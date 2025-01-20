@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Marcone Sito Non Ufficiale</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;  /* Impedisce la comparsa di barre di scorrimento orizzontali */
+        }
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-top: 50px;
+            position: relative; /* Posizionamento relativo per il titolo */
+            background-color: white; /* Sfondo bianco per il titolo */
+            padding: 10px; /* Distanza tra il testo del titolo e i bordi */
+            z-index: 10; /* Assicura che il titolo sia sopra al testo generato */
+        }
+        .random-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            white-space: normal;  /* Permette il ritorno a capo */
+            word-wrap: break-word;  /* Permette ai caratteri di andare a capo */
+            overflow-wrap: break-word; /* Assicura che il testo vada a capo se necessario */
+        }
+        .random-text span {
+            display: inline-block;  /* Tratta ogni carattere come un blocco separato che può andare a capo */
+        }
+    </style>
+</head>
+<body>
+    <h1>Wild Marcone Sito Non Ufficiale</h1>
+    <div class="random-text" id="randomText"></div>
+
+    <script>
+        // Funzione per generare un numero casuale in un intervallo
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Funzione per generare il testo casuale
+        function generateRandomText() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?/,.';
+            let text = '';
+            const numberOfCharacters = 10000;  // Numero di caratteri da generare
+
+            for (let i = 0; i < numberOfCharacters; i++) {
+                const char = characters[getRandom(0, characters.length - 1)];
+                const fontSize = getRandom(10, 50);  // Dimensione del carattere casuale
+                const color = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`; // Colore casuale
+                const bold = getRandom(0, 1) === 0 ? '' : 'font-weight: bold;';
+                const italic = getRandom(0, 1) === 0 ? '' : 'font-style: italic;';
+                const backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`; // Colore sfondo casuale
+
+                text += `<span style="font-size: ${fontSize}px; color: ${color}; ${bold} ${italic}; background-color: ${backgroundColor};">${char}</span>`;
+            }
+
+            return text;
+        }
+
+        // Inizializza il testo casuale nella pagina
+        document.getElementById('randomText').innerHTML = generateRandomText();
+    </script>
+</body>
+</html>
